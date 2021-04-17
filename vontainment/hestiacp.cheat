@@ -1,0 +1,11 @@
+% hestiacp, nginx, cache, apache, php, optimize
+
+# install hestiacp
+wget https://raw.githubusercontent.com/hestiacp/hestiacp/release/install/hst-install.sh
+bash hst-install.sh 
+
+# change hestiacp admin port
+v-change-sys-port <port>
+
+# LE for hostname
+v-update-host-certificate admin <hostname>

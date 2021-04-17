@@ -1,0 +1,29 @@
+% cloudflared
+
+#Install cloudflared
+wget -q https://bin.equinox.io/c/VdrWdbjqyF/cloudflared-stable-linux-amd64.deb
+dpkg -i cloudflared-stable-linux-amd64.deb
+
+#Authenticate cloudflared
+cloudflared tunnel login
+
+#Create tunnel
+cloudflared tunnel create <name>
+
+#List tunnels
+cloudflared tunnel list
+
+#Delete tunnels
+cloudflared tunnel delete -f <name>
+
+#Run cloudflared as service
+sudo cloudflared service install
+
+#start tunnel
+cloudflared tunnel run <name>
+
+#Route tunnel
+cloudflared tunnel route dns <tunnel> <dns>
+
+#Route network
+cloudflared tunnel route ip add <ips> <tunnel> 

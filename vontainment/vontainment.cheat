@@ -1,0 +1,30 @@
+% vontainment
+
+# clear nginx cache
+rm -r /home/*/webcache/*/*
+
+# flush redis
+redis-cli FLUSHALL
+
+#lnav log reader 
+lnav -r /<path>
+
+# Update & Clean
+apt autoremove --purge -y && apt autoclean -y && apt update && apt full-upgrade -y
+
+# Remove all logs
+
+rm -r /var/log/*.gz && rm -r /var/log/*/*.gz && rm -r /var/log/*/*/*.gz
+
+# Secure mysql
+mysql_secure_installation
+
+# Install WP Cli
+
+curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar && chmod +x wp-cli.phar && sudo mv wp-cli.phar /usr/local/bin/wp
+
+# new session
+tmux new -s <session>
+
+# attach to session
+tmux attach -t <session>
