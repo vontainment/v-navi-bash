@@ -1,0 +1,15 @@
+qm importdisk 101 hxexsa-disk1.vmdk local-lvm -format raw
+
+qm create 300 -ide0 local-lvm:4 -net0 e1000 -cdrom local:iso/proxmox-mailgateway_2.1.iso
+Start the new VM
+
+qm start 300
+Send a shutdown request, then wait until the VM is stopped.
+
+qm shutdown 300 && qm wait 300
+Same as above, but only wait for 40 seconds.
+
+qm shutdown 300 && qm wait 300 -timeout 40
+Destroying a VM always removes it from Access Control Lists and it always removes the firewall configuration of the VM. You have to activate --purge, if you want to additionally remove the VM from replication jobs, backup jobs and HA resource configurations.
+
+qm destroy 300 --purge

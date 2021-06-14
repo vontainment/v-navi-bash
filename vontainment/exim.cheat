@@ -1,0 +1,38 @@
+% Exim
+#Print a count of the messages in the queue
+exim -bpc
+
+#Print a listing of the messages in the queue (time queued, size, message-id, sender, recipient)
+exim -bp
+
+#Print a summary of messages in the queue (count, volume, oldest, newest, domain, and totals)
+exim -bp | exiqsumm
+
+#Print what Exim is doing right now:
+exiwhat
+
+#Display all of Exim's configuration settings:
+exim -bP
+
+#Use -f to search the queue for messages from a specific sender:
+exiqgrep -f [luser]@<domain>
+
+#Use -r to search the queue for messages for a specific recipient/domain:
+exiqgrep -r [luser]@<domain>
+
+#Use -o to print messages older than the specified number of seconds. For example, messages older than 1 day:
+exiqgrep -o 86400
+
+#Use -y to print messages that are younger than the specified number of seconds. For example, messages less than an hour old:
+exiqgrep -y 3600
+
+#Use -s to match the size of a message with a regex. For example, 700-799 bytes:
+exiqgrep -s '^7..$'
+
+#Start a queue run
+exim -q -v
+
+#Start a queue run for just local deliveries
+exim -ql -v
+
+#
