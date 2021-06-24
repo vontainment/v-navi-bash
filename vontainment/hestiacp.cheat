@@ -1,4 +1,4 @@
-% hestiacp, nginx, cache, apache, php, optimize
+% hestiacp, Vontainment
 
 # install hestiacp
 wget https://raw.githubusercontent.com/hestiacp/hestiacp/release/install/hst-install.sh

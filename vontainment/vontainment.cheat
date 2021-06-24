@@ -1,4 +1,4 @@
-% vontainment
+% vontainment, hes,tiacp
 
 # clear nginx cache
 rm -r /home/*/webcache/*/*
@@ -13,14 +13,15 @@ lnav -r /<path>
 apt autoremove --purge -y && apt autoclean -y && apt update && apt full-upgrade -y
 
 # Remove all logs
-
 rm -r /var/log/*.gz && rm -r /var/log/*/*.gz && rm -r /var/log/*/*/*.gz
+
+# Clear all tmp folders
+rm -r /tmp/* && rm -r /tmp/*/* && rm -r /tmp/*/*/* && rm -r /tmp/*/*/*/*
 
 # Secure mysql
 mysql_secure_installation
 
 # Install WP Cli
-
 curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar && chmod +x wp-cli.phar && sudo mv wp-cli.phar /usr/local/bin/wp
 
 # new session
@@ -32,3 +33,17 @@ tmux attach -t <session>
 # list system services
 systemctl list-units --type=service
 
+# Read remote syslog
+lnav root@<host>:/var/log/syslog.log
+
+# Read remote domain error log
+lnav root@<host>:/var/log/apache2/domains/<domain>.error.log
+
+# Read remote log
+lnav root@<host>:<log_path> 
+
+# Run speed test
+curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -
+
+# Init Digital Ocean Backups
+/root/.local/bin/dobackup --init
