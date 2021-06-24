@@ -28,3 +28,7 @@ tmux new -s <session>
 
 # attach to session
 tmux attach -t <session>
+
+# list system services
+systemctl list-units --type=service
+
