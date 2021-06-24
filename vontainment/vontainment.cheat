@@ -16,7 +16,7 @@ apt autoremove --purge -y && apt autoclean -y && apt update && apt full-upgrade 
 rm -r /var/log/*.gz && rm -r /var/log/*/*.gz && rm -r /var/log/*/*/*.gz
 
 # Clear all tmp folders
-rm -r /tmp/* && rm -r /tmp/*/* && rm -r /tmp/*/*/* && rm -r /tmp/*/*/*/*
+rm -r /tmp && rm -r /*/tmp/* && rm -r /*/*/tmp/* && rm -r /*/*/*/tmp/* && rm -r /*/*/*/*/tmp/*
 
 # Secure mysql
 mysql_secure_installation
