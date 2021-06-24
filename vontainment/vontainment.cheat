@@ -1,4 +1,4 @@
-% vontainment, hes,tiacp
+% hestiacp, Vontainment
 
 # clear nginx cache
 rm -r /home/*/webcache/*/*
@@ -6,7 +6,7 @@ rm -r /home/*/webcache/*/*
 # flush redis
 redis-cli FLUSHALL
 
-#lnav log reader 
+# lnav log reader 
 lnav -r /<path>
 
 # Update & Clean

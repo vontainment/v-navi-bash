@@ -1,29 +1,31 @@
-% cloudflared, CF, Vontainment
+% cloudflared, Vontainment
 
-#Install cloudflared
+# Download cloudflared
 wget -q https://bin.equinox.io/c/VdrWdbjqyF/cloudflared-stable-linux-amd64.deb
+
+# Install cloudflared
 dpkg -i cloudflared-stable-linux-amd64.deb
 
-#Authenticate cloudflared
+# Authenticate cloudflared
 cloudflared tunnel login
 
-#Create tunnel
+# Create tunnel
 cloudflared tunnel create <name>
 
-#List tunnels
+# List tunnels
 cloudflared tunnel list
 
-#Delete tunnels
+# Delete tunnels
 cloudflared tunnel delete -f <name>
 
-#Run cloudflared as service
-sudo cloudflared service install
+# Run cloudflared as service
+cloudflared service install
 
-#start tunnel
+# start tunnel
 cloudflared tunnel run <name>
 
-#Route tunnel
+# Route tunnel
 cloudflared tunnel route dns <tunnel> <dns>
 
-#Route network
+# Route network
 cloudflared tunnel route ip add <ips> <tunnel> 

@@ -10,25 +10,25 @@ exim -bp
 exim -bp | exiqsumm
 
 #Print what Exim is doing right now:
-exiwhat
+exim what
 
 #Display all of Exim's configuration settings:
 exim -bP
 
 #Use -f to search the queue for messages from a specific sender:
-exiqgrep -f [luser]@<domain>
+exim -q grep -f [luser]@<domain>
 
 #Use -r to search the queue for messages for a specific recipient/domain:
-exiqgrep -r [luser]@<domain>
+exim -q grep -r [luser]@<domain>
 
 #Use -o to print messages older than the specified number of seconds. For example, messages older than 1 day:
-exiqgrep -o 86400
+exim -q grep -o 86400
 
 #Use -y to print messages that are younger than the specified number of seconds. For example, messages less than an hour old:
-exiqgrep -y 3600
+exim -q grep -y 3600
 
 #Use -s to match the size of a message with a regex. For example, 700-799 bytes:
-exiqgrep -s '^7..$'
+exim -q grep -s '^7..$'
 
 #Start a queue run
 exim -q -v

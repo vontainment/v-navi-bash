@@ -1,8 +1,7 @@
-% hestiacp, Vontainment
+% Hestiacp, Vontainment
 
 # install hestiacp
-wget https://raw.githubusercontent.com/hestiacp/hestiacp/release/install/hst-install.sh
-bash hst-install.sh 
+wget https://raw.githubusercontent.com/hestiacp/hestiacp/release/install/hst-install.sh && bash hst-install.sh 
 
 # change hestiacp admin port
 v-change-sys-port <port>
