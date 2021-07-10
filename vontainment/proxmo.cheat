@@ -1,15 +1,22 @@
-qm importdisk 101 hxexsa-disk1.vmdk local-lvm -format raw
+%Proxmox, Vontainment
 
-qm create 300 -ide0 local-lvm:4 -net0 e1000 -cdrom local:iso/proxmox-mailgateway_2.1.iso
-Start the new VM
+# Import disk hxexsa-disk1.vmdk local-lvm -format raw
+qm importdisk 101 <import> <storage> -format <format>
 
-qm start 300
-Send a shutdown request, then wait until the VM is stopped.
+#Send a shutdown request, then wait until the VM is stopped.
+qm shutdown <vmid> && qm wait <vmid>
 
-qm shutdown 300 && qm wait 300
-Same as above, but only wait for 40 seconds.
+# Same as above, but only wait for 40 seconds.
+qm shutdown <vmid> && qm wait <vmid> -timeout 40
 
-qm shutdown 300 && qm wait 300 -timeout 40
-Destroying a VM always removes it from Access Control Lists and it always removes the firewall configuration of the VM. You have to activate --purge, if you want to additionally remove the VM from replication jobs, backup jobs and HA resource configurations.
+# Destroying a VM always removes it from Access Control Lists and it always removes the firewall configuration of the VM. 
+qm destroy <vmid> --purge
 
-qm destroy 300 --purge
+# Expand LVM +100%FREE pve/data
+lvextend -l <size> <lv>
+
+# Expand LVM +100%FREE pve/data
+lvextend -l +100%FREE <lv>
+
+# Expand metadata to +1G pve/data
+lvextend --poolmetadatasize <size> <lvm>
