@@ -35,3 +35,6 @@ exim -q -v
 
 #Start a queue run for just local deliveries
 exim -ql -v
+
+#Delete exim query
+exiqgrep -i | xargs exim -Mrm
