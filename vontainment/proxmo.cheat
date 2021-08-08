@@ -1,7 +1,7 @@
-%Proxmox, Vontainment
+% Proxmox, Vontainment
 
 # Import disk hxexsa-disk1.vmdk local-lvm -format raw
-qm importdisk 101 <import> <storage> -format <format>
+qm importdisk <vmid> <import> <storage> -format <format>
 
 #Send a shutdown request, then wait until the VM is stopped.
 qm shutdown <vmid> && qm wait <vmid>
