@@ -1,0 +1,19 @@
+% proxmox, disk, drives vontainmentioned
+
+# Create physical volume "--metadatasize 250k -y -ff /dev/sda1"
+pvcreate --metadatasize <size> -y -ff /dev/<sdXX>
+
+# Create volume group "vgcreate vmdata /dev/sda1"
+vgcreate <vg> /dev/<sdXX>
+
+# Create logical volume lvm-thin "lvcreate -l 100%FREE -T -n vmstore vmdata"
+lvcreate -l <size> -T -n <lv> <vg>
+
+# Expand LVM +100%FREE/100G pve/data
+lvextend -l <size> <vg>/<lv>
+
+# Expand LVM +100%FREE pve/data
+lvextend -l <size> <lv>
+
+# Expand metadata to +1G pve/data
+lvextend --poolmetadatasize <size> <vg>/<lv>

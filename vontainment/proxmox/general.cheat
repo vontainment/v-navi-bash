@@ -1,4 +1,4 @@
-% Proxmox, Vontainment
+% Proxmox, general, vm, vontainment
 
 # Import disk hxexsa-disk1.vmdk local-lvm -format raw
 qm importdisk <vmid> <import> <storage> -format <format>
@@ -7,16 +7,9 @@ qm importdisk <vmid> <import> <storage> -format <format>
 qm shutdown <vmid> && qm wait <vmid>
 
 # Same as above, but only wait for 40 seconds.
-qm shutdown <vmid> && qm wait <vmid> -timeout 40
+qm shutdown <vmid> && qm wait <vmid> -timeout <timeout>
 
 # Destroying a VM always removes it from Access Control Lists and it always removes the firewall configuration of the VM. 
 qm destroy <vmid> --purge
 
-# Expand LVM +100%FREE pve/data
-lvextend -l <size> <lv>
 
-# Expand LVM +100%FREE pve/data
-lvextend -l +100%FREE <lv>
-
-# Expand metadata to +1G pve/data
-lvextend --poolmetadatasize <size> <lvm>
