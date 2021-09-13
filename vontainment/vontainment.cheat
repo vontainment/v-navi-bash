@@ -47,3 +47,10 @@ curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.p
 
 # Init Digital Ocean Backups
 /root/.local/bin/dobackup --init
+
+# See all manually installed apt packages for
+aptitude search '!~M ~i'
+
+
+
+dpkg-query -f '${binary:Package}\n' -W > packages_list.txt
