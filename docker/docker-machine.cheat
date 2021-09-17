@@ -1,6 +1,3 @@
-; This has been extracted from
-; https://github.com/tldr-pages/tldr/blob/master/pages/common/docker-machine.md
-
 % docker-machine, common
 
 # List currently running docker machines

@@ -1,6 +1,3 @@
-; This has been extracted from
-; https://github.com/tldr-pages/tldr/blob/master/pages/common/docker-compose.md
-
 % docker-compose, common
 
 # List all running containers

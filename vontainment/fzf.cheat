@@ -1,0 +1,10 @@
+% Fzf, Find, Fd, Search, Vontainment
+
+# Start fzf on all files in the specified directory
+find <path_to_directory> -type f | fzf
+
+# Start fzf to display running processes
+ps aux | fzf
+
+# Start fzf with a specified query:
+fzf --query "<search_term>"

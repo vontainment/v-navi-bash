@@ -1,6 +1,3 @@
-; This has been extracted from
-; https://github.com/tldr-pages/tldr/blob/master/pages/linux/a2ensite.md
-
 % a2ensite, linux
 
 # Enable a virtual host

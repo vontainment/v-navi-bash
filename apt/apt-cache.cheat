@@ -1,6 +1,3 @@
-; This has been extracted from
-; https://github.com/tldr-pages/tldr/blob/master/pages/linux/apt-cache.md
-
 % apt-cache, linux
 
 # Search for a package in your current sources

@@ -1,6 +1,3 @@
-; This has been extracted from
-; https://github.com/tldr-pages/tldr/blob/master/pages/common/docker-containers.md
-
 % docker-containers, common
 
 # List currently running Docker containers

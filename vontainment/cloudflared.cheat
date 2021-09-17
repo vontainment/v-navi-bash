@@ -1,4 +1,4 @@
-% cloudflared, Vontainment
+% Cloudflared, Proxy, Tunnels, Expose, Vontainment
 
 # Download cloudflared
 wget -q https://bin.equinox.io/c/VdrWdbjqyF/cloudflared-stable-linux-amd64.deb

@@ -1,6 +1,3 @@
-; This has been extracted from
-; https://github.com/tldr-pages/tldr/blob/master/pages/common/docker-run.md
-
 % docker-run, common
 
 # Run command in a new container from a tagged image

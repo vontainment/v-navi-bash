@@ -1,4 +1,4 @@
-% Exim, Vontainment
+% Exim, Email, MTA, Communication, Vontainment
 
 #Print a count of the messages in the queue
 exim -bpc
@@ -16,10 +16,10 @@ exim what
 exim -bP
 
 #Use -f to search the queue for messages from a specific sender:
-exim -q grep -f [luser]@<domain>
+exim -q grep -f <user>@<domain>
 
 #Use -r to search the queue for messages for a specific recipient/domain:
-exim -q grep -r [luser]@<domain>
+exim -q grep -r <user>@<domain>
 
 #Use -o to print messages older than the specified number of seconds. For example, messages older than 1 day:
 exim -q grep -o 86400

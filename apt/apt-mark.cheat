@@ -1,6 +1,3 @@
-; This has been extracted from
-; https://github.com/tldr-pages/tldr/blob/master/pages/linux/apt-mark.md
-
 % apt-mark, linux
 
 # Mark a package as automatically installed

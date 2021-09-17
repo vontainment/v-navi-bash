@@ -1,6 +1,3 @@
-; This has been extracted from
-; https://github.com/tldr-pages/tldr/blob/master/pages/common/docker-build.md
-
 % docker-build, common
 
 # Build a docker image using the Dockerfile in the current directory

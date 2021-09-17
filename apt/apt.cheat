@@ -1,6 +1,3 @@
-; This has been extracted from
-; https://github.com/tldr-pages/tldr/blob/master/pages/linux/apt.md
-
 % apt, linux
 
 # Update the list of available packages and versions (it's recommended to run this before other `apt` commands)
