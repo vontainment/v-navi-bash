@@ -37,4 +37,4 @@ exim -q -v
 exim -ql -v
 
 #Delete exim query
-exiqgrep -i | xargs exim -Mrm
+exim grep -i | xargs exim -Mrm
