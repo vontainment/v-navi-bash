@@ -1062,7 +1062,7 @@ v-open-fs-config <config>
 v-open-fs-file <user> <file>
 
 # Purge nginx cache
-v-purge-nginx-cache <user> <domain>å
+v-purge-nginx-cache <user> <domain>
 
 # rebuild all assets for a specified user
 v-rebuild-all <user> <restart>
